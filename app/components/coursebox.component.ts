@@ -1,0 +1,20 @@
+import {Component, Input} from '@angular/core';
+import {Course} from '../common/course';
+
+@Component({
+    selector: 'coursebox',
+    template:
+        `
+            <div class="course">
+                <img [src]="course.image">
+                <h2>{{course.name}}</h2>
+                <span class="price">{{course.price | currency: 'USD' : true : '1.2-2' }}</span>
+                <button>Add element</button>
+            </div>
+        `
+})
+
+export class CourseBoxComponent{
+    @Input()
+    course: Course;
+}
