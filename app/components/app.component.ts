@@ -6,9 +6,12 @@ import {CartService} from '../services/cart.service';
     template:
         `
            <header>Cursos Platzi</header>
+           <nav>
+                <a routerLink="">Inicio</a>
+                <a routerLink="courses">Courses</a>
+           </nav>
            <section>
-                <courses></courses>
-                <cart></cart>
+                <router-outlet></router-outlet>
            </section>
         `,
     providers: [CartService]

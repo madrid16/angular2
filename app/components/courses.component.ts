@@ -14,6 +14,7 @@ import {ApiService} from "../services/api.services";
                 *ngFor="let course_info of courses">
             </coursebox>
         </div>
+        <cart></cart>
 `,
     providers: [ApiService]
 })

@@ -24,6 +24,10 @@ var ApiService = (function () {
         var _this = this;
         return new Promise(function (resolve) { return setTimeout(resolve, 2000); }).then(function () { return _this.getCourses(); });
     };
+    ApiService.prototype.getCourse = function (id) {
+        return this.getCourses()
+            .then(function (courses) { return courses.find(function (course) { return course.id == id; }); });
+    };
     ApiService.prototype.error = function (error) {
         return Promise.reject(error.message || error);
     };

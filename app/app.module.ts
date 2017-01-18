@@ -6,10 +6,39 @@ import {CoursesComponent} from './components/courses.component'
 import {CourseBoxComponent} from "./components/coursebox.component";
 import {CartComponent} from "./components/cart.component";
 import {HttpModule} from "@angular/http";
+import {RouterModule} from "@angular/router";
+import {WelcomeComponent} from "./components/welcome.component";
+import {CourseDetail} from "./components/details.component";
+
+const routes = [
+    {
+        path: '',
+        component: WelcomeComponent,
+    },
+    {
+        path: 'courses',
+        component: CoursesComponent
+    },
+    {
+        path: 'course/:id',
+        component: CourseDetail
+    }
+];
 
 @NgModule({
-    imports: [BrowserModule, HttpModule],
-    declarations: [AppComponent, CoursesComponent, CourseBoxComponent, CartComponent],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        RouterModule.forRoot(routes)
+    ],
+    declarations: [
+        AppComponent,
+        CoursesComponent,
+        CourseBoxComponent,
+        CartComponent,
+        WelcomeComponent,
+        CourseDetail
+    ],
     bootstrap: [AppComponent]
 })
 
