@@ -14,12 +14,13 @@ var app_component_1 = require('./components/app.component');
 var courses_component_1 = require('./components/courses.component');
 var coursebox_component_1 = require("./components/coursebox.component");
 var cart_component_1 = require("./components/cart.component");
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, courses_component_1.CoursesComponent, coursebox_component_1.CourseBoxComponent, cart_component_1.CartComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
