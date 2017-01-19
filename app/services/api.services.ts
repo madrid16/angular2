@@ -23,7 +23,7 @@ export class ApiService{
 
     getCourse(id:number){
         return this.getCourses()
-            .then( courses => courses.find( course => course.id == id ));
+            .then( courses => courses.find( (course: any) => course.id == id ));
     }
 
     error(error: any){
