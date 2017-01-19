@@ -1,0 +1,11 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js:
+  - "6.1"
+os:
+  - linux
+before_script:
+  - sh -e /etc/init.d/xvfb start
+install:
+  - npm install
