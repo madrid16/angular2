@@ -11,15 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var api_services_1 = require("../services/api.services");
 var auth_service_1 = require("../services/auth.service");
+var apiobservable_1 = require("../services/apiobservable");
 var CoursesComponent = (function () {
-    function CoursesComponent(auth, ApiService) {
+    function CoursesComponent(auth, ApiObservable, ApiService) {
         this.auth = auth;
+        this.ApiObservable = ApiObservable;
         this.ApiService = ApiService;
         this.title = 'Cursos disponibles';
     }
     CoursesComponent.prototype.getCourses = function () {
         var _this = this;
-        this.ApiService.getCourses().then(function (courses) { return _this.courses = courses; });
+        // this.ApiService.getCourses().then(
+        //     courses => this.courses = courses
+        // );
+        this.ApiObservable.getCourses().subscribe(function (data) { _this.courses = data; }, function (error) { return console.log(error); });
     };
     CoursesComponent.prototype.ngOnInit = function () {
         this.auth.check();
@@ -29,9 +34,9 @@ var CoursesComponent = (function () {
         core_1.Component({
             selector: 'courses',
             template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n            <coursebox\n                [course]=\"course_info\"\n                *ngFor=\"let course_info of courses\">\n            </coursebox>\n        </div>\n        <cart></cart>\n",
-            providers: [api_services_1.ApiService, auth_service_1.AuthService]
+            providers: [api_services_1.ApiService, auth_service_1.AuthService, apiobservable_1.ApiObservable]
         }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService, api_services_1.ApiService])
+        __metadata('design:paramtypes', [auth_service_1.AuthService, apiobservable_1.ApiObservable, api_services_1.ApiService])
     ], CoursesComponent);
     return CoursesComponent;
 }());
