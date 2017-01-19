@@ -17,6 +17,8 @@ var CourseBoxComponent = (function () {
         this.router = router;
     }
     CourseBoxComponent.prototype.add = function (course) {
+        course.state = 'active';
+        setTimeout(function () { course.state = 'inactive'; }, 400);
         this.CartService.addToCart(course);
     };
     CourseBoxComponent.prototype.goToDetails = function (course) {
@@ -30,7 +32,19 @@ var CourseBoxComponent = (function () {
     CourseBoxComponent = __decorate([
         core_1.Component({
             selector: 'coursebox',
-            template: "\n            <div class=\"course\">\n                <img [src]=\"course.image\" (click)=\"goToDetails(course)\">\n                <h2>{{course.name}}</h2>\n                <span class=\"price\">{{course.price | currency: 'USD' : true : '1.2-2' }}</span>\n                <button (click)=\"add(course)\">Add element to Cart</button>\n            </div>\n        "
+            template: "\n            <div class=\"course\" [@courseState]=\"course.state\">\n                <img [src]=\"course.image\" (click)=\"goToDetails(course)\">\n                <h2>{{course.name}}</h2>\n                <span class=\"price\">{{course.price | currency: 'USD' : true : '1.2-2' }}</span>\n                <button (click)=\"add(course)\">Add element to Cart</button>\n            </div>\n        ",
+            animations: [
+                core_1.trigger('courseState', [
+                    core_1.state('inactive', core_1.style({
+                        backgroundColor: 'none',
+                        transform: 'scale(1)'
+                    })),
+                    core_1.state('active', core_1.style({
+                        backgroundColor: '#cfd8dc',
+                        transform: 'scale(0.9)'
+                    }))
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [cart_service_1.CartService, router_1.Router])
     ], CourseBoxComponent);
