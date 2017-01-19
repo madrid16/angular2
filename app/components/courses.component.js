@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var api_services_1 = require("../services/api.services");
+var auth_service_1 = require("../services/auth.service");
 var CoursesComponent = (function () {
-    function CoursesComponent(ApiService) {
+    function CoursesComponent(auth, ApiService) {
+        this.auth = auth;
         this.ApiService = ApiService;
         this.title = 'Cursos disponibles';
     }
@@ -20,15 +22,16 @@ var CoursesComponent = (function () {
         this.ApiService.getCourses().then(function (courses) { return _this.courses = courses; });
     };
     CoursesComponent.prototype.ngOnInit = function () {
+        this.auth.check();
         this.getCourses();
     };
     CoursesComponent = __decorate([
         core_1.Component({
             selector: 'courses',
             template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n            <coursebox\n                [course]=\"course_info\"\n                *ngFor=\"let course_info of courses\">\n            </coursebox>\n        </div>\n        <cart></cart>\n",
-            providers: [api_services_1.ApiService]
+            providers: [api_services_1.ApiService, auth_service_1.AuthService]
         }), 
-        __metadata('design:paramtypes', [api_services_1.ApiService])
+        __metadata('design:paramtypes', [auth_service_1.AuthService, api_services_1.ApiService])
     ], CoursesComponent);
     return CoursesComponent;
 }());

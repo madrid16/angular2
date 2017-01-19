@@ -9,6 +9,8 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import {WelcomeComponent} from "./components/welcome.component";
 import {CourseDetail} from "./components/details.component";
+import {FormsModule} from "@angular/forms";
+import {LoginComponent} from "./components/login.component";
 
 const routes = [
     {
@@ -22,6 +24,10 @@ const routes = [
     {
         path: 'course/:id',
         component: CourseDetail
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
 
@@ -29,7 +35,8 @@ const routes = [
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        FormsModule
     ],
     declarations: [
         AppComponent,
@@ -37,7 +44,8 @@ const routes = [
         CourseBoxComponent,
         CartComponent,
         WelcomeComponent,
-        CourseDetail
+        CourseDetail,
+        LoginComponent
     ],
     bootstrap: [AppComponent]
 })
