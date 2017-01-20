@@ -11,3 +11,7 @@ install:
   - npm install
 script:
   - npm run test-once
+branches:
+ only:
+ - master
+ - develop
