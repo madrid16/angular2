@@ -1,0 +1,46 @@
+[
+  {
+    "id":1,
+    "name":"Angular 2",
+    "image":"http://angularconnect.com/workspace/2015/img/resources/angular.png",
+    "price":150,
+    "instructor":"Josue G",
+    "description":"Curso de Angular 2",
+    "date":"2016-11-30"
+  },
+  {
+    "id":2,
+    "name":"Android",
+    "image":"http://angularconnect.com/workspace/2015/img/resources/angular.png",
+    "price":220,
+    "instructor":"Joel Gomez",
+    "description":"Curso de Angular Android Avanzado",
+    "date":"2016-12-18"
+  },
+  {
+    "id":3,
+    "name":"Python",
+    "image":"http://angularconnect.com/workspace/2015/img/resources/angular.png",
+    "price":450,
+    "instructor":"Armando Lopez",
+    "description":"Curso de Python, aprendiendo back-end",
+    "date":"2017-01-11"
+  },
+  {
+    "id":4,
+    "name":"Java",
+    "image":"http://angularconnect.com/workspace/2015/img/resources/angular.png",
+    "price":250,
+    "instructor":"Juan Granada",
+    "description":"Curso de Java para empresas",
+    "date":"2016-12-30"
+  },
+  {
+    "id":5,
+    "name":"React",
+    "image":"http://angularconnect.com/workspace/2015/img/resources/angular.png",
+    "price":300,
+    "instructor":"Por confirmar",
+    "description":"Curso de React, aprende todo en 24 horas",
+    "date":"2017-01-30"
+  }]
