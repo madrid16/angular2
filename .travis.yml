@@ -2,16 +2,31 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-  - "6.1"
+- '6.1'
 os:
-  - linux
+- linux
 before_script:
-  - sh -e /etc/init.d/xvfb start
+- sh -e /etc/init.d/xvfb start
 install:
-  - npm install
+- npm install
 script:
-  - npm run test-once
+- npm run test-once
 branches:
- only:
- - master
- - develop
+  only:
+  - master
+  - develop
+deploy:
+  matrix:
+  - provider: codedeploy
+    access_key_id: AKIAIC4NBBKZBY5UPMXA
+    secret_access_key: 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
+    revision_type: github
+    application: angular
+    deployment_group: AngularDeploymentGroup
+    on:
+      branch: develop
+  secret_access_key:
+    secure: 7NAh8fFUK2GhDlRynxkKskwPNg+tHITVETwfldMb9W5rgn2h56M8k/FmbQMFn3PviC+iROWl0lhMVLocVF82k6H9TDt5WcwZXYuosUXgufFjyQqvQimB6vXXGspAcKDmwKcq3a/Sth9TCYVvMG0I65xhB+BQ1mr+M6mocFwYHbaEh5O4N5AO+ELb3A1z1EjcJC9+m03SozIhmMo08AcZF0ojBrvIBAuaHqCtqc9AxoIQ/QNTWaPEPAv+H2Lk585rTLusC/+WENlpKFC5PIGiVNsqiJqKmuZbIH1NBeS7IVsellB4QY23tZbkrjhD0ESo3MGFlxLnPUqqElSuI5xSkRWGTCS01YKaUY35NdNhKbnhEi4TtbC/k3MLaExHUo0VePoR9oSe1mmzLO5+9f+D6kOiezFOq5XkCuxfYMp3ddnETD1bYMhbkaWQ3NJuyXE9XOn9gWFiO+meP0vPC16fKl5SXxnt+R6FHUVkpA8MUFBquge6S8kTZ/eKMsFoUdrrKbk3YS0LREpX1A5Nuxx2m4NzZFrhC8UJ3qI54v3YMYKAAzca9sBLIxRUoWx4QuiHmXgA6mbVEwnyPmTY0zEA8jD1xQGn1odDLKHuFtBaVaxuZsJhQbLIuHXRvFA5ZhADIhICdEIfvI0dAg8zsKZ21L+nL5EQ7aB26yPeR8yjibk=
+after_deploy:
+- "./after_deploy_1.sh"
+- "./after_deploy_2.sh"
