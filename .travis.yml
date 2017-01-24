@@ -17,7 +17,7 @@ branches:
   - develop
 deploy:
   matrix:
-  - provider: codedeploy
+    provider: codedeploy
     access_key_id: AKIAIC4NBBKZBY5UPMXA
     secret_access_key: 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
     revision_type: github
