@@ -24,6 +24,7 @@ deploy:
     application: angular
     deployment_group: AngularDeploymentGroup
     on:
+      repo: madrid16/angular2
       tags: true
       branch: develop
   secret_access_key:
