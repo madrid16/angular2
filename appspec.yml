@@ -7,7 +7,7 @@ hooks:
   BeforeInstall:
     - location: ./deploy/start_server
       timeout: 60
-      runas: root
+      runas: angular
   ApplicationStop:
     - location: ./deploy/stop_server
       timeout: 60
