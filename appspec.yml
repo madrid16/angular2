@@ -5,10 +5,10 @@ files:
     destination: /home/angular/webapps/www/
 hooks:
   BeforeInstall:
-    - location: deploy/start_server
+    - location: ./deploy/start_server
       timeout: 60
       runas: root
   ApplicationStop:
-    - location: deploy/stop_server
+    - location: ./deploy/stop_server
       timeout: 60
       runas: angular
