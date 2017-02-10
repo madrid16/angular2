@@ -1,2 +1,3 @@
 #!/bin/bash
 echo "Stop serve"
+sudo supervisorctl stop angular
