@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/angular/webapps/www/
+    overwrite: yes
 hooks:
   BeforeInstall:
     - location: deploy/start_server
