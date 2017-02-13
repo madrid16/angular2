@@ -27,6 +27,3 @@ deploy:
     repo: $REPO
 secret_access_key:
   secure: $SECURE
-after_deploy:
-- "/home/angular/after_deploy_1.sh"
-- "./after_deploy_2.sh"

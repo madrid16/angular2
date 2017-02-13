@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Start serve"
 cd /home/angular/webapps/www/
-sudo npm install 2>&1 | tee /home/angular/webapps/logs/npm_log.txt
+sudo npm install 2>&1 | sudo tee /home/angular/webapps/logs/npm_log.txt
 echo "Start supervisor angular"
 sudo supervisorctl start angular
