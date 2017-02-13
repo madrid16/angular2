@@ -26,15 +26,17 @@ var CourseDetail = (function () {
                 .then(function (course) { return _this.course = course; });
         });
     };
-    CourseDetail = __decorate([
-        core_1.Component({
-            selector: 'detail',
-            template: "\n        <div class=\"detail-course\" *ngIf=\"course\">\n            <img [src]=\"course.image\">\n             <h2>{{course.name}}</h2>\n             <span class=\"number\">\n                Cost of {{course.price | currency: 'USD': true : '1.2-2'}}    \n             </span>\n             <p>\n                {{course.description}} By {{course.instructor}}\n            </p>\n        </div>\n    ",
-            providers: [api_services_1.ApiService]
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, common_1.Location, api_services_1.ApiService])
-    ], CourseDetail);
     return CourseDetail;
 }());
+CourseDetail = __decorate([
+    core_1.Component({
+        selector: 'detail',
+        template: "\n        <div class=\"detail-course\" *ngIf=\"course\">\n            <img [src]=\"course.image\">\n             <h2>{{course.name}}</h2>\n             <span class=\"number\">\n                Cost of {{course.price | currency: 'USD': true : '1.2-2'}}    \n             </span>\n             <p>\n                {{course.description}} By {{course.instructor}}\n            </p>\n        </div>\n    ",
+        providers: [api_services_1.ApiService]
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        common_1.Location,
+        api_services_1.ApiService])
+], CourseDetail);
 exports.CourseDetail = CourseDetail;
 //# sourceMappingURL=details.component.js.map

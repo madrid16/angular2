@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require('rxjs/add/operator/map');
+require("rxjs/add/operator/map");
 var ApiObservable = (function () {
     function ApiObservable(http) {
         this.http = http;
@@ -20,11 +20,11 @@ var ApiObservable = (function () {
         return this.http.get(url)
             .map(function (response) { return response.json(); });
     };
-    ApiObservable = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], ApiObservable);
     return ApiObservable;
 }());
+ApiObservable = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], ApiObservable);
 exports.ApiObservable = ApiObservable;
 //# sourceMappingURL=apiobservable.js.map

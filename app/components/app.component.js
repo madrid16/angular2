@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var cart_service_1 = require('../services/cart.service');
+var core_1 = require("@angular/core");
+var cart_service_1 = require("../services/cart.service");
 var auth_service_1 = require("../services/auth.service");
 var AppComponent = (function () {
     function AppComponent(auth) {
@@ -19,15 +19,15 @@ var AppComponent = (function () {
     AppComponent.prototype.logout = function () {
         this.auth.logout();
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n           <header>\n                Cursos Platzi\n                \n                <div class=\"user_bar\">\n                    <a *ngIf=\"!auth.session\" routerLink=\"login\">SignIn</a>\n                    <a *ngIf=\"auth.session\" (click)=\"logout()\">Close Session</a>\n                </div>\n           </header>\n           <nav>\n                <a routerLink=\"\">Inicio</a>\n                <a routerLink=\"courses\">Courses</a>\n           </nav>\n           <section>\n                <router-outlet></router-outlet>\n           </section>\n        ",
-            providers: [cart_service_1.CartService, auth_service_1.AuthService]
-        }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        template: "\n           <header>\n                Cursos Platzi\n                \n                <div class=\"user_bar\">\n                    <a *ngIf=\"!auth.session\" routerLink=\"login\">SignIn</a>\n                    <a *ngIf=\"auth.session\" (click)=\"logout()\">Close Session</a>\n                </div>\n           </header>\n           <nav>\n                <a routerLink=\"\">Inicio</a>\n                <a routerLink=\"courses\">Courses</a>\n           </nav>\n           <section>\n                <router-outlet></router-outlet>\n           </section>\n        ",
+        providers: [cart_service_1.CartService, auth_service_1.AuthService]
+    }),
+    __metadata("design:paramtypes", [auth_service_1.AuthService])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

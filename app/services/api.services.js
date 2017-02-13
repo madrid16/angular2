@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-require('rxjs/add/operator/toPromise');
+require("rxjs/add/operator/toPromise");
 var http_1 = require("@angular/http");
 var ApiService = (function () {
     function ApiService(http) {
@@ -31,11 +31,11 @@ var ApiService = (function () {
     ApiService.prototype.error = function (error) {
         return Promise.reject(error.message || error);
     };
-    ApiService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], ApiService);
     return ApiService;
 }());
+ApiService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], ApiService);
 exports.ApiService = ApiService;
 //# sourceMappingURL=api.services.js.map

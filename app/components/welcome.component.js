@@ -17,14 +17,14 @@ var WelcomeComponent = (function () {
     WelcomeComponent.prototype.ngOnInit = function () {
         this.auth.check();
     };
-    WelcomeComponent = __decorate([
-        core_1.Component({
-            selector: 'welcome',
-            template: '<h2>Welcome to our cart</h2>'
-        }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService])
-    ], WelcomeComponent);
     return WelcomeComponent;
 }());
+WelcomeComponent = __decorate([
+    core_1.Component({
+        selector: 'welcome',
+        template: '<h2>Welcome to our cart</h2>'
+    }),
+    __metadata("design:paramtypes", [auth_service_1.AuthService])
+], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
 //# sourceMappingURL=welcome.component.js.map

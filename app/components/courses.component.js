@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var api_services_1 = require("../services/api.services");
 var auth_service_1 = require("../services/auth.service");
 var apiobservable_1 = require("../services/apiobservable");
@@ -30,15 +30,17 @@ var CoursesComponent = (function () {
         this.auth.check();
         this.getCourses();
     };
-    CoursesComponent = __decorate([
-        core_1.Component({
-            selector: 'courses',
-            template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n            <coursebox\n                [course]=\"course_info\"\n                *ngFor=\"let course_info of courses\">\n            </coursebox>\n        </div>\n        <cart></cart>\n",
-            providers: [api_services_1.ApiService, auth_service_1.AuthService, apiobservable_1.ApiObservable]
-        }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService, apiobservable_1.ApiObservable, api_services_1.ApiService])
-    ], CoursesComponent);
     return CoursesComponent;
 }());
+CoursesComponent = __decorate([
+    core_1.Component({
+        selector: 'courses',
+        template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n            <coursebox\n                [course]=\"course_info\"\n                *ngFor=\"let course_info of courses\">\n            </coursebox>\n        </div>\n        <cart></cart>\n",
+        providers: [api_services_1.ApiService, auth_service_1.AuthService, apiobservable_1.ApiObservable]
+    }),
+    __metadata("design:paramtypes", [auth_service_1.AuthService,
+        apiobservable_1.ApiObservable,
+        api_services_1.ApiService])
+], CoursesComponent);
 exports.CoursesComponent = CoursesComponent;
 //# sourceMappingURL=courses.component.js.map

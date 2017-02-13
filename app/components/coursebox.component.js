@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var cart_service_1 = require('../services/cart.service');
+var core_1 = require("@angular/core");
+var cart_service_1 = require("../services/cart.service");
 var router_1 = require("@angular/router");
 var CourseBoxComponent = (function () {
     function CourseBoxComponent(CartService, router) {
@@ -25,30 +25,31 @@ var CourseBoxComponent = (function () {
         var link = ['/course', course.id];
         this.router.navigate(link);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], CourseBoxComponent.prototype, "course", void 0);
-    CourseBoxComponent = __decorate([
-        core_1.Component({
-            selector: 'coursebox',
-            template: "\n            <div class=\"course\" [@courseState]=\"course.state\">\n                <img [src]=\"course.image\" (click)=\"goToDetails(course)\">\n                <h2>{{course.name}}</h2>\n                <span class=\"price\">{{course.price | currency: 'USD' : true : '1.2-2' }}</span>\n                <button (click)=\"add(course)\">Add element to Cart</button>\n            </div>\n        ",
-            animations: [
-                core_1.trigger('courseState', [
-                    core_1.state('inactive', core_1.style({
-                        backgroundColor: 'none',
-                        transform: 'scale(1)'
-                    })),
-                    core_1.state('active', core_1.style({
-                        backgroundColor: '#cfd8dc',
-                        transform: 'scale(0.9)'
-                    }))
-                ])
-            ]
-        }), 
-        __metadata('design:paramtypes', [cart_service_1.CartService, router_1.Router])
-    ], CourseBoxComponent);
     return CourseBoxComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], CourseBoxComponent.prototype, "course", void 0);
+CourseBoxComponent = __decorate([
+    core_1.Component({
+        selector: 'coursebox',
+        template: "\n            <div class=\"course\" [@courseState]=\"course.state\">\n                <img [src]=\"course.image\" (click)=\"goToDetails(course)\">\n                <h2>{{course.name}}</h2>\n                <span class=\"price\">{{course.price | currency: 'USD' : true : '1.2-2' }}</span>\n                <button (click)=\"add(course)\">Add element to Cart</button>\n            </div>\n        ",
+        animations: [
+            core_1.trigger('courseState', [
+                core_1.state('inactive', core_1.style({
+                    backgroundColor: 'none',
+                    transform: 'scale(1)'
+                })),
+                core_1.state('active', core_1.style({
+                    backgroundColor: '#cfd8dc',
+                    transform: 'scale(0.9)'
+                }))
+            ])
+        ]
+    }),
+    __metadata("design:paramtypes", [cart_service_1.CartService,
+        router_1.Router])
+], CourseBoxComponent);
 exports.CourseBoxComponent = CourseBoxComponent;
 //# sourceMappingURL=coursebox.component.js.map

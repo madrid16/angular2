@@ -20,15 +20,15 @@ var LoginComponent = (function () {
             this.error = 'Incorrect Password';
         }
     };
-    LoginComponent = __decorate([
-        core_1.Component({
-            selector: 'login-form',
-            template: "\n        <p>Shop Private</p>\n        <form (ngSubmit)=\"login()\" #loginForm=\"ngForm\">\n        \n            <div *ngIf=\"error\" class=\"error\">{{error}}</div>\n            \n            <label>Email:</label>\n            <input type=\"text\" required autocomplete=\"off\" [(ngModel)]=\"user.email\" placeholder=\"email\" name=\"email\">\n            \n            <label>Password</label>\n            <input type=\"password\" required [(ngModel)]=\"user.password\" placeholder=\"your password\" name=\"password\">\n            \n            <button type=\"submit\">Submit</button>\n        </form>\n    ",
-            providers: [auth_service_1.AuthService]
-        }), 
-        __metadata('design:paramtypes', [auth_service_1.AuthService])
-    ], LoginComponent);
     return LoginComponent;
 }());
+LoginComponent = __decorate([
+    core_1.Component({
+        selector: 'login-form',
+        template: "\n        <p>Shop Private</p>\n        <form (ngSubmit)=\"login()\" #loginForm=\"ngForm\">\n        \n            <div *ngIf=\"error\" class=\"error\">{{error}}</div>\n            \n            <label>Email:</label>\n            <input type=\"text\" required autocomplete=\"off\" [(ngModel)]=\"user.email\" placeholder=\"email\" name=\"email\">\n            \n            <label>Password</label>\n            <input type=\"password\" required [(ngModel)]=\"user.password\" placeholder=\"your password\" name=\"password\">\n            \n            <button type=\"submit\">Submit</button>\n        </form>\n    ",
+        providers: [auth_service_1.AuthService]
+    }),
+    __metadata("design:paramtypes", [auth_service_1.AuthService])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
