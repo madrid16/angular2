@@ -1,3 +1,4 @@
 #!/bin/bash
+cd /home/angular/webapps/www/
 sudo npm install
 sudo supervisorctl start angular
